@@ -1,0 +1,30 @@
+:root{
+  --bg:#071026;
+  --muted:rgba(255,255,255,0.72);
+}
+*{box-sizing:border-box}
+html,body,#root{height:100%;}
+body{
+  margin:0;
+  font-family:Inter, 'Segoe UI', Roboto, system-ui, -apple-system;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(255,255,255,0.02), transparent), var(--bg);
+  color: #e8eef8;
+  -webkit-font-smoothing:antialiased;
+}
+.app-root{padding-top:68px}
+.page-wrap{max-width:1100px;margin:36px auto;padding:24px}
+
+/* Simple animated helpers */
+.fade-up{opacity:0; transform:translateY(14px); animation:fadeUp .7s forwards}
+@keyframes fadeUp{to{opacity:1; transform:none}}
+
+.reveal{opacity:0; transform:translateY(18px);}
+.revealed{opacity:1; transform:none; transition:all .6s cubic-bezier(.2,.9,.2,1)}
+
+.section-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:20px; border-radius:14px; box-shadow:0 6px 30px rgba(2,6,23,0.6);}
+
+/* Responsive grid */
+.grid{display:grid; gap:18px}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:900px){.grid.cols-3{grid-template-columns:repeat(1,1fr)} .grid.cols-2{grid-template-columns:repeat(1,1fr)} }
