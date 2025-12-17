@@ -26,7 +26,7 @@ export default function About() {
       <div className="about-header">
         <img src={profileImg} alt="Sivakumar" />
         <h2>My Journey</h2>
-        <p>MCA Student • Web Developer • UI Enthusiast</p>
+        <p>MCA Student • Web Developer • UI /UX Developer </p>
       </div>
 
       {/* TIMELINE */}

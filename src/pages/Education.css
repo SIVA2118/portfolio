@@ -1,5 +1,5 @@
 /* =====================================================
-   EDUCATION – TIMELINE (NEW DESIGN)
+   EDUCATION – ANIMATED TIMELINE
 ===================================================== */
 .education {
   opacity: 0;
@@ -10,16 +10,6 @@
 .education.revealed {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* ================= TITLE ================= */
-.edu-title {
-  font-size: 36px;
-  margin-bottom: 60px;
-  text-align: center;
-  background: linear-gradient(90deg, #ff7a18, #ff0066);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 /* ================= TIMELINE ================= */
@@ -46,6 +36,45 @@
   );
 }
 
+/* ================= TITLE CARD ================= */
+.edu-title-card {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 60px;
+}
+
+.edu-title-card::before {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff7a18, #ff0066);
+  box-shadow: 0 0 20px rgba(255, 122, 24, 0.9);
+}
+
+.edu-title-card h2 {
+  margin: 0;
+  padding: 26px 20px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 900;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+
+  backdrop-filter: blur(16px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+
+  background-image: linear-gradient(90deg, #ff7a18, #ff0066);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* ================= CARD ================= */
 .edu-card {
   position: relative;
@@ -56,22 +85,22 @@
 .edu-dot {
   position: absolute;
   left: -3px;
-  top: 24px;
+  top: 26px;
   width: 14px;
   height: 14px;
   border-radius: 50%;
   background: linear-gradient(135deg, #ff7a18, #ff0066);
-  box-shadow: 0 0 20px rgba(255,122,24,0.9);
+  box-shadow: 0 0 20px rgba(255, 122, 24, 0.9);
 }
 
 /* ================= CONTENT ================= */
 .edu-content {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 22px;
   padding: 26px 28px;
   backdrop-filter: blur(14px);
-  box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
 }
 
 /* ================= HEADER ================= */
@@ -88,7 +117,20 @@
   object-fit: contain;
   border-radius: 12px;
   padding: 6px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ================= TEXT ================= */
+.edu-year {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.edu-content h3 {
+  margin: 6px 0 0;
+  font-size: 18px;
+  color: #fff;
 }
 
 /* ================= BODY ================= */
@@ -101,7 +143,7 @@
 .edu-body p {
   flex: 1;
   margin: 0;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.7;
 }
 
@@ -113,9 +155,9 @@
   overflow: hidden;
   flex-shrink: 0;
 
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 
   transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
@@ -128,25 +170,10 @@
 
 .edu-image-card:hover {
   transform: scale(1.06);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
 }
 
-/* ================= TEXT ================= */
-.edu-year {
-  font-size: 13px;
-  font-weight: 700;
-  color: rgba(255,255,255,0.6);
-}
-
-.edu-content h3 {
-  margin: 6px 0 0;
-  font-size: 18px;
-  color: #fff;
-}
-
-/* =====================================================
-   RESPONSIVE – TABLET
-===================================================== */
+/* ================= TABLET ================= */
 @media (max-width: 900px) {
   .edu-body {
     flex-direction: column;
@@ -163,78 +190,43 @@
   }
 }
 
-/* =====================================================
-   RESPONSIVE – MOBILE (<= 480px) – NEW DESIGN
-===================================================== */
+/* ================= MOBILE ================= */
 @media (max-width: 480px) {
-
-  /* Title */
-  .edu-title {
-    font-size: 22px;
-    margin-bottom: 32px;
-  }
-
-  /* Timeline spacing */
   .edu-timeline {
     padding-left: 26px;
   }
 
-  .edu-timeline::before {
-    left: 6px;
+  .edu-title-card {
+    padding-left: 20px;
+    margin-bottom: 40px;
   }
 
-  /* Card */
+  .edu-title-card h2 {
+    font-size: 22px;
+    padding: 18px;
+    border-radius: 16px;
+  }
+
   .edu-card {
     padding-left: 20px;
     margin-bottom: 40px;
   }
 
-  .edu-dot {
-    top: 22px;
-    width: 12px;
-    height: 12px;
-  }
-
-  /* Content card */
   .edu-content {
     padding: 18px;
     border-radius: 16px;
   }
 
-  /* Header */
-  .edu-header {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .edu-header img {
-    width: 42px;
-    height: 42px;
-  }
-
-  /* Text */
   .edu-content h3 {
     font-size: 15.5px;
   }
 
-  .edu-year {
-    font-size: 12px;
-  }
-
-  .edu-body {
-    gap: 16px;
-  }
-
   .edu-body p {
     font-size: 14px;
-    line-height: 1.6;
   }
 
-  /* Image card – FULL WIDTH */
   .edu-image-card {
     width: 100%;
     height: 150px;
-    border-radius: 14px;
   }
 }
